@@ -20,3 +20,13 @@ export interface SanitizedUser {
     email: string;
     [key: string]: unknown;
 }
+
+export interface AuthTokens {
+    accessToken: string;
+    refreshToken: string;
+}
+
+export interface RegisterResult {
+    user: SanitizedUser;
+    tokens: AuthTokens;
+}
