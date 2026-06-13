@@ -30,3 +30,8 @@ export interface RegisterResult {
     user: SanitizedUser;
     tokens: AuthTokens;
 }
+
+export interface LoginResult {
+    user: SanitizedUser;
+    tokens: AuthTokens;
+}
