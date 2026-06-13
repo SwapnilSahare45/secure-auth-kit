@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import { SALT_ROUNDS } from '../constants';
+import { SALT_ROUNDS } from '../constants/index.js';
 
 export async function hashPassword(plaintext: string): Promise<string> {
     return bcrypt.hash(plaintext, SALT_ROUNDS);

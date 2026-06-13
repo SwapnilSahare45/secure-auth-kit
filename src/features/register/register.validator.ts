@@ -5,9 +5,9 @@ import {
     PASSWORD_NUMBER_REGEX,
     PASSWORD_SPECIAL_CHARACTER_REGEX,
     PASSWORD_UPPERCASE_REGEX,
-} from '../../constants';
-import { RegisterInput } from '../../types/auth.types';
-import { AppError } from '../../utils/AppError';
+} from '../../constants/index.js';
+import { RegisterInput } from '../../types/auth.types.js';
+import { AppError } from '../../utils/AppError.js';
 
 export const validateRegisterInput = (body: unknown): RegisterInput => {
     if (typeof body !== 'object' || body === null) {

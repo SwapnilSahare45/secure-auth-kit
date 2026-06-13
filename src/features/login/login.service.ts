@@ -1,9 +1,9 @@
-import { LoginInput, LoginResult } from '../../types/auth.types';
-import { SecureAuthConfig } from '../../types/config.types';
-import { AppError } from '../../utils/AppError';
-import { comparePassword } from '../../utils/hash';
-import { generateAccessToken, generateRefreshToken } from '../../utils/jwt';
-import { sanitizeUser } from '../../utils/sanitizeUser';
+import { LoginInput, LoginResult } from '../../types/auth.types.js';
+import { SecureAuthConfig } from '../../types/config.types.js';
+import { AppError } from '../../utils/AppError.js';
+import { comparePassword } from '../../utils/hash.js';
+import { generateAccessToken, generateRefreshToken } from '../../utils/jwt.js';
+import { sanitizeUser } from '../../utils/sanitizeUser.js';
 
 export const loginUser = async (
     input: LoginInput,

@@ -1,5 +1,5 @@
 import { Document, Model } from 'mongoose';
-import { JWTConfig } from './jwt.types';
+import { JWTConfig } from './jwt.types.js';
 
 export interface UserDocument extends Document {
     email: string;

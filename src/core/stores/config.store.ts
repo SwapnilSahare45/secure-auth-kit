@@ -1,5 +1,5 @@
-import { SecureAuthConfig } from '../../types/config.types';
-import { AppError } from '../../utils/AppError';
+import { SecureAuthConfig } from '../../types/config.types.js';
+import { AppError } from '../../utils/AppError.js';
 
 let _config: SecureAuthConfig | null = null;
 

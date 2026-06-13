@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from 'express';
-import { getConfig } from '../../core/stores/config.store';
-import { sendSuccess } from '../../utils/response';
-import { validateRegisterInput } from '../register/register.validator';
-import { loginUser } from './login.service';
+import { getConfig } from '../../core/stores/config.store.js';
+import { sendSuccess } from '../../utils/response.js';
+import { validateRegisterInput } from '../register/register.validator.js';
+import { loginUser } from './login.service.js';
 
 export const loginController = async (
     req: Request,

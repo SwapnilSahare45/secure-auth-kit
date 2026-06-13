@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
-import { getConfig } from '../core/stores/config.store';
-import { AppError } from '../utils/AppError';
-import { verifyToken } from '../utils/jwt';
+import { getConfig } from '../core/stores/config.store.js';
+import { AppError } from '../utils/AppError.js';
+import { verifyToken } from '../utils/jwt.js';
 
 export const extractBearerToken = (authHeader: string | undefined): string | null => {
     if (!authHeader?.startsWith('Bearer ')) return null;

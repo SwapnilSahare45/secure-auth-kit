@@ -1,9 +1,9 @@
-import { SENSITIVE_FIELDS } from '../constants';
-import { SanitizedUser } from '../types/auth.types';
-import { UserDocument } from '../types/config.types';
+import { SENSITIVE_FIELDS } from '../constants/index.js';
+import { SanitizedUser } from '../types/auth.types.js';
+import { UserDocument } from '../types/config.types.js';
 
 export function sanitizeUser(user: UserDocument): SanitizedUser {
-    const raw = user.toObject ? user.toObject() : { ...user };
+    const raw = typeof user.toObject === 'function' ? user.toObject() : { ...user };
 
     const sanitized: Record<string, unknown> = {};
 

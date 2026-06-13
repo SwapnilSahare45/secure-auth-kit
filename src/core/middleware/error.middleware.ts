@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
-import { AppError } from '../../utils/AppError';
-import { sendError } from '../../utils/response';
+import { AppError } from '../../utils/AppError.js';
+import { sendError } from '../../utils/response.js';
 
 export function errorMiddleware(err: Error, req: Request, res: Response, next: NextFunction): void {
     if (err instanceof AppError && err.isOperational) {

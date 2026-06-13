@@ -1,9 +1,9 @@
-import { RegisterInput, RegisterResult } from '../../types/auth.types';
-import { SecureAuthConfig } from '../../types/config.types';
-import { AppError } from '../../utils/AppError';
-import { hashPassword } from '../../utils/hash';
-import { generateAccessToken, generateRefreshToken } from '../../utils/jwt';
-import { sanitizeUser } from '../../utils/sanitizeUser';
+import { RegisterInput, RegisterResult } from '../../types/auth.types.js';
+import { SecureAuthConfig } from '../../types/config.types.js';
+import { AppError } from '../../utils/AppError.js';
+import { hashPassword } from '../../utils/hash.js';
+import { generateAccessToken, generateRefreshToken } from '../../utils/jwt.js';
+import { sanitizeUser } from '../../utils/sanitizeUser.js';
 
 export const registerUser = async (
     input: RegisterInput,

@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
-import { JWTConfig, TokenPayload } from '../types/jwt.types';
-import { AppError } from './AppError';
+import { JWTConfig, TokenPayload } from '../types/jwt.types.js';
+import { AppError } from './AppError.js';
 
 export function generateAccessToken(
     payload: Omit<TokenPayload, 'type' | 'exp'>,

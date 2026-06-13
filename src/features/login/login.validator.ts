@@ -1,5 +1,5 @@
-import { LoginInput } from '../../types/auth.types';
-import { AppError } from '../../utils/AppError';
+import { LoginInput } from '../../types/auth.types.js';
+import { AppError } from '../../utils/AppError.js';
 
 export const validateLoginInput = (body: unknown): LoginInput => {
     if (typeof body !== 'object' || body === null) {
