@@ -1,6 +1,6 @@
 {
     "name": "secure-auth-kit",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Authentication toolkit for Express and MongoDB",
     "repository": {
         "type": "git",
