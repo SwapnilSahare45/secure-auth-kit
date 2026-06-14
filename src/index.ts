@@ -4,7 +4,7 @@ import { createAuthRouter } from './core/routes/auth.routes.js';
 import { setConfig } from './core/stores/config.store.js';
 import { SecureAuthConfig } from './types/config.types.js';
 
-export async function secureAuth(app: Express, config: SecureAuthConfig): Promise<void> {
+export function secureAuth(app: Express, config: SecureAuthConfig): void {
     validateConfig(config);
 
     setConfig(config);
