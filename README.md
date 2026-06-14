@@ -22,6 +22,8 @@ import { User } from './models/User.js';
 
 const app = express();
 
+app.use(express.json());
+
 secureAuth(app, {
     userModel: User,
     jwt: {

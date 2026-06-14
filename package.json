@@ -6,7 +6,7 @@
         "type": "git",
         "url": "git+https://github.com/SwapnilSahare45/secure-auth-kit"
     },
-    "homepage": "https://github.com/swapnil-sahare/secure-auth-kit#readme",
+    "homepage": "https://github.com/SwapnilSahare45/secure-auth-kit#readme",
     "author": "Swapnil Sahare",
     "type": "module",
     "main": "./dist/index.js",

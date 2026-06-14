@@ -20,7 +20,7 @@ export const authenticate = (req: Request, res: Response, next: NextFunction): v
         const config = getConfig();
         const payload = verifyToken(token, config.jwt);
 
-        if (payload.type === 'access') {
+        if (payload.type !== 'access') {
             throw AppError.unauthorized('Invalid token type', 'TOKEN_TYPE_MISMATCH');
         }
 
