@@ -1,7 +1,13 @@
 {
     "name": "secure-auth-kit",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "Authentication toolkit for Express and MongoDB",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/SwapnilSahare45/secure-auth-kit"
+    },
+    "homepage": "https://github.com/swapnil-sahare/secure-auth-kit#readme",
+    "author": "Swapnil Sahare",
     "type": "module",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
@@ -12,7 +18,8 @@
         }
     },
     "files": [
-        "dist"
+        "dist",
+        "README.md"
     ],
     "engines": {
         "node": ">=18"
@@ -28,7 +35,6 @@
         "typescript",
         "auth"
     ],
-    "license": "MIT",
     "peerDependencies": {
         "express": "^5.0.0",
         "mongoose": "^8.0.0"
