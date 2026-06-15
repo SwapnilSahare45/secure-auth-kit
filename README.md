@@ -1,5 +1,8 @@
 # Secure Auth Kit
 
+![npm](https://img.shields.io/npm/v/secure-auth-kit)
+![license](https://img.shields.io/npm/l/secure-auth-kit)
+
 Authentication toolkit for Express.js and MongoDB.
 
 ---
@@ -38,11 +41,12 @@ app.listen(3000);
 
 This registers the following routes under `/auth` (configurable via `routePrefix`):
 
-| Method | Route          | Auth required |
-| ------ | -------------- | ------------- |
-| POST   | /auth/register | No            |
-| POST   | /auth/login    | No            |
-| GET    | /auth/me       | Yes           |
+| Method | Route               | Auth required |
+| ------ | ------------------- | ------------- |
+| POST   | /auth/register      | No            |
+| POST   | /auth/login         | No            |
+| POST   | /auth/refresh-token | No            |
+| GET    | /auth/me            | Yes           |
 
 ---
 
@@ -93,7 +97,7 @@ secureAuth(app, {
 
 ## `authenticate` Middleware
 
-Protect any route by importing `authenticate`:,
+Protect any route by importing `authenticate`:
 
 ```ts
 import { authenticate } from 'secure-auth-kit';
@@ -118,7 +122,24 @@ app.get('/protected', authenticate, (req, res) => {
 }
 ```
 
-Returns `{ user, tokens: { accessToken, refreshToken }}`
+Returns:
+
+```json
+{
+    "success": true,
+    "data": {
+        "user": {
+            ...
+            ...
+        },
+        "tokens": {
+            "accessToken": "access_token",
+            "refreshToken": "refresh_token"
+        }
+    },
+    "message": "Registration successful"
+}
+```
 
 **POST /auth/login**
 
@@ -129,11 +150,61 @@ Returns `{ user, tokens: { accessToken, refreshToken }}`
 }
 ```
 
-Returns `{ user, tokens: { accessToken, refreshToken }}`
+Returns:
+
+```json
+{
+    "success": true,
+    "data": {
+        "user":{
+            ...
+            ...
+        },
+        "tokens": {
+            "accessToken": "access_token",
+            "refreshToken": "refresh_token"
+        }
+    },
+    "message": "Login successful"
+}
+```
+
+**POST /auth/refresh-token**
+
+```json
+{
+    "refreshToken": "your_refresh_token"
+}
+```
+
+Returns:
+
+```json
+{
+    "success": true,
+    "data": {
+        "accessToken": "new_access_token",
+        "refreshToken": "new_refresh_token"
+    },
+    "message": "Tokens refreshed"
+}
+```
+
+Use this endpoint when the access token expires. Send a valid refresh token and the API will issue a new token pair.
 
 **GET /auth/me** _(requires Bearer token)_
-</br>
-Returns the current user (sanitized, no password).
+
+Returns:
+
+```json
+{
+    "success":true,
+    "data":{
+        ...
+        ...
+    }
+}
+```
 
 ---
 

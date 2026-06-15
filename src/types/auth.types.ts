@@ -35,3 +35,7 @@ export interface LoginResult {
     user: SanitizedUser;
     tokens: AuthTokens;
 }
+
+export interface RefreshTokenInput {
+    refreshToken: string;
+}
